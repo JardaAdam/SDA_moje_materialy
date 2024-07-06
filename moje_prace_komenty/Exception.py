@@ -1,8 +1,6 @@
 """pouzivaji se pro ignorovani urcitych erroru v urcitych pripadech
 chranime se tim spadnuti programu ve vyhimecnych situacich """
 
-
-
 """try, except = v pripade provedeni prikazu [try] program pokracuje dale a neprovede se 
 [except] v pripade ze se neprovede [try] provede se [except] """
 
@@ -57,16 +55,14 @@ chranime se tim spadnuti programu ve vyhimecnych situacich """
 """raise V kódu máme také možnost vyhazovat výjimky, když chceme signalizovat, že určité chování je chybou. 
 K tomu slouží klíčové slovo"""
 
-a = 3
-b = [1, 0, 2]
-for elem in b:
-    if elem == 0:
-        raise ValueError("The divisor cannot be zero")
-    result = a / elem
-    print(f"Result is: {result}")
-
-
-
+# a = 3
+# b = [1, 0, 2]
+# for elem in b:
+#     if elem == 0:
+#         raise ValueError("The divisor cannot be zero")
+#     result = a / elem
+#     print(f"Result is: {result}")
+#
 # try:
 #     arr = []
 #     'asdf' + 1
@@ -77,43 +73,47 @@ for elem in b:
 # except Exception:
 #     print('other exeption')
 
-    """retezeni except pod sebe stane se vzdicky jen ta prvni z nich"""
+"""retezeni except pod sebe stane se vzdicky jen ta prvni z nich"""
 
 
 """vytvoreni vlastnich vyjimek = Můžeme také vytvořit vlastní třídy výjimek. K tomu potřebujeme vytvořit třídu, 
 která dědí z rodičovské třídy všech výjimek: Exception."""
 
 """metoda1 """
-class CustomException(Exception):
-    pass
 
 
-a = 3
-b = [1, 0, 2]
-for elem in b:
-    if elem == 0:
-        raise CustomException("The divisor cannot be zero")
-    """v () napiseme hlasku kterou chceme vypsat do terminalu"""
-    result = a / elem
-    print(f"Result is: {result}")
+# class CustomException(Exception):
+#     pass
+#
+#
+# a = 3
+# b = [1, 0, 2]
+# for elem in b:
+#     if elem == 0:
+#         raise CustomException("The divisor cannot be zero")
+#     """v () napiseme hlasku kterou chceme vypsat do terminalu"""
+#     result = a / elem
+#     print(f"Result is: {result}")
 
 
 """Metoda 2"""
 
-class CustomException(Exception):
-    def __init__(self):
-        message = "The divisor cannot be zero"
-        super().__init__(message)
-    """sprava ktera se ma vypsat pri namy vytvorene podmince je napsana zde nahore na az dale v raise
-    tato metoda je dobra kdyz by jsme opakovali vicekrat CustomException"""
 
-a = 3
-b = [1, 0, 2]
-for elem in b:
-    if elem == 0:
-        raise CustomException()
-    result = a / elem
-    print(f"Result is: {result}")
+# class CustomException(Exception):
+#     def __init__(self):
+#         message = "The divisor cannot be zero"
+#         super().__init__(message)
+"""sprava ktera se ma vypsat pri namy vytvorene podmince je napsana zde nahore na az dale v raise
+tato metoda je dobra kdyz by jsme opakovali vicekrat CustomException"""
+
+
+# a = 3
+# b = [1, 0, 2]
+# for elem in b:
+#     if elem == 0:
+#         raise CustomException()
+#     result = a / elem
+#     print(f"Result is: {result}")
 
 
 """Task"""
@@ -125,6 +125,22 @@ print("task")
 
 # Vytvor custom exception MathException a raisni ju s rozumnou hlaskou vtedy,
 # ak nevieme vykonat jednu z danych operacii. V opacnom pripade vrat 3 vysledky.
+
+import math
+x = float(input("write positive number x: "))
+def handle_math(x):
+    """control when is x positive number"""
+    if x <= 0:
+        raise ValueError("x must be positive number")
+
+    division_result = 42 / x
+    sqrt_result = math.sqrt(x)
+    log_result = math.log(x)
+
+    return (division_result, sqrt_result, log_result)
+
+results = handle_math(x)
+print(results)
 
 
 
