@@ -42,7 +42,7 @@ def predstaveni_cloveka(jmeno: str, prijmeni: str, titul: str):
 
 """Default parameters: preddefinovana hodnota"""
 
-# predstaveni_cloveka(1 , True, 5)
+predstaveni_cloveka(1 , True, 5)
 
 # TODO - defaultni volitelne parametry
 
@@ -74,7 +74,7 @@ def spocti_rok_narozeni(vek: int):
     """nedoporucuje se delat! vytvori se az po spusteni funkce"""
     aktualni_rok = 2024
     return aktualni_rok - vek
-    print("konec funkce")   # nikdy se neprovede
+# print("konec funkce")   # nikdy se neprovede
 
 
 rok_narozeni = spocti_rok_narozeni(50)

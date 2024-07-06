@@ -29,7 +29,7 @@
 
     # print(basen.read().split())       # TODO - cteni - split()
 
-# TODO - zapis
+# TODO - zapis "w"
 # with open("novy.txt", "w") as novy_soubor:
 #     # for index in range(5):
 #     #     novy_soubor.write(f"Radek s indexem {index}\n")
@@ -42,11 +42,11 @@
 #         novy_soubor.writelines(basen.readlines())
 
 
-# TODO - create
+# TODO - create "x"
 # with open("novy.txt", "x") as novy_soubor:
 #     novy_soubor.write("Pracujeme s creation modem.")
 
-# TODO - append
+# TODO - append "a"
 # with open("novy.txt", "a") as soubor:
 #     soubor.write("\nRadek pridany appendem.")
 
