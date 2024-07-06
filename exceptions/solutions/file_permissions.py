@@ -7,7 +7,9 @@
 def append_text(filename: str, text: str) -> None:
     try:
         with open(filename, 'a') as file:
+            """ 'a' = append """
             print(text, file=file)
+            """v printu vpisujeme do naseho souboru """
     except PermissionError:
         print(f"Cannot write to file {filename}")
 

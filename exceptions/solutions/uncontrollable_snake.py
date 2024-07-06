@@ -9,7 +9,7 @@
 
 import time
 
-
+"""while True je nadrazene takze se bude porad opakovat cycle"""
 i = 0
 while True:
     try:
@@ -18,3 +18,16 @@ while True:
         time.sleep(1)
     except KeyboardInterrupt:
         print('You cannot stop me that easily!')
+
+
+"""v tomto pripade je while  """
+
+i = 0
+
+try:
+    while True:
+        print(f'Python {i} initiated...')
+        i += 1
+        time.sleep(1)
+except KeyboardInterrupt:
+    print('You cannot stop me that easily!')

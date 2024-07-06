@@ -4,7 +4,11 @@ from datetime import timedelta
 
 def calculate_square_root(x):
     assert x >= 0, "Input must be non-negative"
+    """assert vypne program pokud je splena podminka napsana za nim x  """
     return math.sqrt(x)
+
+
+print(calculate_square_root(5))
 
 
 def find_max(array: list[int]):
