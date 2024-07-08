@@ -20,7 +20,6 @@
 
 """muj postup"""
 
-
 class Vehicles:
 
     def __init__(self, brand, model, color, n_of_wheels, max_speed, seat_capacity):
@@ -30,6 +29,7 @@ class Vehicles:
         self.n_of_wheels = n_of_wheels
         self.max_speed = max_speed
         self.seat_capacity = seat_capacity
+
 
     def __str__(self):
         return f'{self.color} {self.brand} {self.model}'
