@@ -128,6 +128,8 @@ print("task")
 
 import math
 x = float(input("write positive number x: "))
+
+
 def handle_math(x):
     """control when is x positive number"""
     if x <= 0:
@@ -136,10 +138,11 @@ def handle_math(x):
     division_result = 42 / x
     sqrt_result = math.sqrt(x)
     log_result = math.log(x)
-
     return (division_result, sqrt_result, log_result)
 
+
 results = handle_math(x)
+
 print(results)
 
 

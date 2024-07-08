@@ -1,4 +1,4 @@
-from dataclases import dataclass
+from dataclasses import dataclass
 from copy import deepcopy
 
 
@@ -9,12 +9,11 @@ které ukládá na jiné místo v paměti, takže v paměti máme oba objekty v�
 různých místech."""
 
 
-class Figure:
-    pass
+
 
 
 @dataclass
-class Rectangle(Figure):
+class Rectangle:
     a: int
     b: int = 0
 
