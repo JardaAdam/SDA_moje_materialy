@@ -16,8 +16,9 @@ from dataclasses import dataclass
 6,Inception,Sci-Fi,8.8,2010
 """
 
-
+"""frozen=True -> osetrujeme si tim aby se nedali napr. pomoci copy prepisovat data!"""
 @dataclass(frozen=True)
+
 class Movie:
     id: int
     title: str
@@ -32,6 +33,7 @@ def read_movies_csv(file_name):
         loaded_movies = []
         for row in reader:
             id_, title, genre, rating, year = row
+            """jednoradkovy zapis jak se nam ma rozbalit data"""
             loaded_movies.append(
                 Movie(
                     int(id_),
