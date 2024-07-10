@@ -1,9 +1,9 @@
 # Task 1
-def even_numbers():
-    num = 0
-    while True:
-        yield num
-        num += 2
+# def even_numbers():
+#     num = 0
+#     while True:
+#         yield num
+#         num += 2
 
 
 # Task 2
@@ -24,9 +24,9 @@ def my_range(start, stop, step=1):
 
 
 if __name__ == "__main__":
-    even_gen = even_numbers()
-    for _ in range(5):
-        print(next(even_gen))
+    # even_gen = even_numbers()
+    # for _ in range(5):
+    #     print(next(even_gen))
 
     for number in my_range(5, 1, -1):
         print(number)
