@@ -2,6 +2,7 @@ import random
 
 
 # Task 1
+# Napis generator `even_numbers()`, ktory bude generovat donekonecna parne (sude) cisla
 def even_numbers():
     num = 0
     while True:
@@ -10,6 +11,8 @@ def even_numbers():
 
 
 # Task 2
+# Napis generator `my_range(start, stop=None, step=1), ktory sa sprava rovnako ako funkcia range
+
 def my_range(start, stop, step=1):
     if step == 0:
         raise ValueError('Step cannot be 0')
@@ -27,6 +30,8 @@ def my_range(start, stop, step=1):
 
 
 # Task 3
+# Napis generator `fib()`, ktory bude donekonecna generovat cisla fibonnaciho postupnosti
+# 0 1 1 2 3 5 8 13...
 def fib():
     a, b = 0, 1
     while True:
@@ -35,6 +40,8 @@ def fib():
 
 
 # Task 4
+# Napis generator `read_file(file_name)`, ktory otvori subor `file_name` a bude
+# postupne vracat jeho riadky
 def read_file(file_name):
     with open(file_name) as file:
         for line in file:
@@ -42,12 +49,15 @@ def read_file(file_name):
 
 
 # Task 5
+# Napis generator `randgen(start, end)`, ktory bude donekonecna generovat nahodne cisla
+# v intervale <start, end>.
 def randgen(start, end):
     while True:
         yield random.randint(start, end)
 
 
 # Task 6
+# Napis generatory `map` a `filter`, ktore sa spravaju ako builtin funkcie `map` a `filter`
 def my_map(func, iterable):
     for obj in iterable:
         yield func(obj)
