@@ -70,29 +70,30 @@ def my_filter(func, iterable):
 
 
 if __name__ == "__main__":
+    print("Task1")
     even_gen = even_numbers()
     for _ in range(5):
         print(next(even_gen))
     print()
-
+    print("task2")
     for number in my_range(5, 1, -1):
         print(number)
     print()
-
+    print("task3")
     fib_gen = fib()
     for _ in range(10):
         print(next(fib_gen))
     print()
-
+    print("task4")
     for line in read_file('text.txt'):
         print(line)
     print()
-
+    print("task5")
     rand_gen = randgen(1, 10)
     for _ in range(5):
         print(next(rand_gen), end=' ')
     print('\n')
-
+    print("task6")
     print(
         list(map(lambda x: -x, range(-10, 11)))
         == list(my_map(lambda x: -x, range(-10, 11)))
