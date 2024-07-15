@@ -4,9 +4,15 @@ import re
 # Napis funkciu, ktora dostane datum v stringu a skontroluje, ci je vo formate mm-dd-yyyy. Ak nie, vratime None.
 # Ak ano, prevedieme ho na format dd/mm/yyyy a vratime ho ako vysledok.
 
+def convert_date_format_no_walrus(string):
+    match = re.fullmatch(r'(\d{2})-(\d{2})-(\d{4})', string):
+    if match:
+        return f'{match.group(2)}/{match.group(1)}/{match.group(3)}'
 
 def convert_date_format(string):
     if match := re.fullmatch(r'(\d{2})-(\d{2})-(\d{4})', string):
+        """:= usetri jeden radek viz. _no_walrus
+         ()-()-() zavorky definuji group"""
         return f'{match.group(2)}/{match.group(1)}/{match.group(3)}'
 
 
