@@ -3,7 +3,8 @@ import re
 
 # Task 5
 # Napis funkciu, ktora dostane na vstupe string a zisti, ci sa jedna o IPv4 adresu.
-# IPv4 adresa je vo formate {cislo v rozmedzi 0-255}.{cislo v rozmedzi 0-255}.{cislo v rozmedzi 0-255}.{cislo v rozmedzi 0-255}
+# IPv4 adresa je vo formate {cislo v rozmedzi 0-255}.{cislo v rozmedzi 0-255}.{cislo v rozmedzi 0-255}.
+# {cislo v rozmedzi 0-255}
 
 
 def is_ipv4_address(string):
