@@ -5,7 +5,7 @@ import re
 # Ak ano, prevedieme ho na format dd/mm/yyyy a vratime ho ako vysledok.
 
 def convert_date_format_no_walrus(string):
-    match = re.fullmatch(r'(\d{2})-(\d{2})-(\d{4})', string):
+    match = re.fullmatch(r'(\d{2})-(\d{2})-(\d{4})', string)
     if match:
         return f'{match.group(2)}/{match.group(1)}/{match.group(3)}'
 
