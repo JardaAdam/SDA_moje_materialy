@@ -5,9 +5,9 @@ import re
 # "Love the new features in #Python3! #coding #developer #regex"
 
 def find_hashtags(text):
-    return re.findall(r'#\w+', text)
+    return re.findall(r'#[^\s#]+', text)
 
 
 if __name__ == "__main__":
     print(find_hashtags("# #a"))
-    print(find_hashtags("Love the new features in #Python3.10! #coding #developer #regex"))
+    print(find_hashtags("Love the new features in #Python3.10! ## #coding #developer #regex"))
