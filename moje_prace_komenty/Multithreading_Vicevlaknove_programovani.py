@@ -2,7 +2,12 @@
 # Python umožňuje, aby se různé části kódu prováděly současně pomocí vláken. Jedná se o sekvence programových
 # příkazů, které lze provádět nezávisle na zbytku kódu. Používáme k tomu modul threading.
 
+#TODO toto programovani je vhodne pouzit pro: funkce kdy pracujeme s inputem.
+
+
 import threading
+
+
 
 
 def iterate_print(iter):
@@ -61,7 +66,7 @@ def print_square(num):
     time.sleep(5)
     return num * num
 
-""" pri vicevlaknovem programovani bezi casy (time.sleep(5)) soubezne """
+    #pri vicevlaknovem programovani bezi casy (time.sleep(5)) soubezne
 # TODO Příklad s návratovou hodnotou
 
 if __name__ == "__main__":
@@ -78,3 +83,40 @@ if __name__ == "__main__":
     t2.join()
 
     print("Done!")
+
+
+# TODO Paralelní zpracování (multiprocessing)
+# Pokud chceme výpočty paralelizovat, můžeme použít modul multiprocessing, který spouští kód v dílčích procesech.
+# Každý z nich dostane vlastní interpret a paměťový prostor, takže GIL nebude problém.
+# Tímto způsobem můžeme využít více procesorů.
+import timeit
+from playground import count
+
+def with_multiprocessing_func():
+    import multiprocessing
+
+    p1 = multiprocessing.Process(target=count, args=(400000, 200000))
+    p2 = multiprocessing.Process(target=count, args=(200000, 0))
+
+    p1.start()
+    p2.start()
+
+    p1.join()
+    p2.join()
+
+
+if __name__ == "__main__":
+    wo_threading = "wo_threading_func()"
+    with_threading = "with_threading_func()"
+    with_multiprocessing = "with_multiprocessing_func()"
+    setup = "from __main__ import wo_threading_func, with_threading_func, with_multiprocessing_func"
+
+    print("Without threads:", timeit.timeit(stmt=wo_threading,
+                                            setup=setup,
+                                            number=100))
+    print("With threads:", timeit.timeit(stmt=with_threading,
+                                         setup=setup,
+                                         number=100))
+    print("With sub-processes:", timeit.timeit(stmt=with_multiprocessing,
+                                               setup=setup,
+                                               number=100))
