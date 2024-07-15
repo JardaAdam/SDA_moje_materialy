@@ -1,5 +1,10 @@
 import re
-
+# Task 4
+# Napis funkciu, ktora vrati vsetky webove adresy zo stringu vo formate
+# https://{hocico}<whitespace>
+# alebo
+# http://{hocico}<whitespace>
+# Ak mas cas navyse, mozes si skusit napisat taky regex, ktory korektne validuje celu URL.
 
 def find_urls_easy(text):
     return re.findall(r"https?://[A-Za-z0-9-]+\.[A-Za-z]{2,6}\s", text)

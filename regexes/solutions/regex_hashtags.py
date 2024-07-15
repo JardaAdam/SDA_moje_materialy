@@ -1,5 +1,8 @@
 import re
-
+# Task 6
+# Napis funkciu, ktora dostane ako parameter string obsahujuci hashtagy z tweetu a vrati ich zoznam.
+# Priklad:
+# "Love the new features in #Python3! #coding #developer #regex"
 
 def find_hashtags(text):
     return re.findall(r'#\w+', text)
