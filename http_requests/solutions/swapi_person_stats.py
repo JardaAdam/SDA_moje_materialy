@@ -35,3 +35,8 @@ def get_person_stats(people_url):
 
 url = 'https://swapi.dev/api/people/'
 print(get_person_stats(url))
+
+# TODO napis funkci ktera napise jmena pro n/a, none, hermafrodite
+
+
+
