@@ -35,17 +35,31 @@ import timeit
 # print(foo(5))
 
 import timeit
-import random
 
 # TODO Definice funkcí linear_search a binary_search
 # tento priklad ukazuje casovy rozdil mezi zpusoby linear a binary
+
+
 def linear_search(lst, to_find):
+    """
+
+    :param lst: list cisel ve kterem hledam
+    :param to_find: vupisuje index hledaneho cisla
+    :return: vypise index hledaneho cisla pokud ho nenajde vypise [don't find it]
+    """
     for i, element in enumerate(lst):
         if element == to_find:
             return i
-    return -1
+    return "don't find it"
+
 
 def binary_search(lst, to_find):
+    """
+    
+    :param lst:
+    :param to_find:
+    :return:
+    """
     left, right = 0, len(lst) - 1
     while left <= right:
         mid = (left + right) // 2
@@ -84,4 +98,7 @@ result = binary_search(lst, to_find)
     print(timeit.timeit(stmt=binary_search_code,
                         setup=setup,
                         number=1000))
+
+result = linear_search([1, 2, 3, 4, 5], 7)
+print(result)  # To by zobrazilo výsledek vyhledávání, například 4 (index cisla 5)
 
